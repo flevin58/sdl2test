@@ -3,6 +3,7 @@ extern crate sdl2;
 use sdl2::event::Event;
 use sdl2::image::{InitFlag, LoadSurface};
 use sdl2::keyboard::Keycode;
+use sdl2::log::log;
 use sdl2::mouse::Cursor;
 use sdl2::pixels::Color;
 use sdl2::rect::Rect;
@@ -59,5 +60,7 @@ pub fn run(png: &Path) -> Result<(), String> {
 }
 
 fn main() -> Result<(), String> {
-    run(Path::new("assets/cursor.png"))
+    let done = run(Path::new("assets/cursor.png"));
+    log("Done...");
+    done
 }
